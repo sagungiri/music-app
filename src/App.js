@@ -13,7 +13,9 @@ class App extends Component {
     tracks: []
   }
 
-
+  componentDidMount() {
+    this.searchArtist('metallica')
+  }
 
   searchArtist = artistQuery => {
     // console.log(this.state)
@@ -40,10 +42,10 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state)
+    //console.log(this.state)
     return (
       <div className='App'>
-        <h3>Music Master</h3>
+        <h2>Music Master</h2>
         <Search searchArtist={this.searchArtist} />
         <Artist artist={this.state.artist} />
         <Tracks tracks={this.state.tracks} />

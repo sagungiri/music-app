@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 
+const trackImgStyle = {
+    width: 200,
+    height: 150,
+}
+
+const trackStyle = {
+    display: 'inline-block',
+    width: 200,
+    height: 150,
+    padding: 20
+}
+
+
 class Tracks extends Component {
     state = {
         playing: false,
@@ -36,8 +49,9 @@ class Tracks extends Component {
                     const { id, name, album, preview_url } = track
                     return (
                         <div key={id}
-                            onClick={this.playAudio(preview_url)}>
-                            <img src={album.images[0].url} alt='' />
+                            onClick={this.playAudio(preview_url)}
+                            style={trackStyle}>
+                            <img src={album.images[0].url} alt='' style={trackImgStyle} />
                             <p>{name}</p>
                         </div>
                     )
